@@ -14,7 +14,7 @@ function seleccionarMascotaJugador(){
     let inputPydos = document.getElementById('pydos')
 
     let spanMascotaJugador = document.getElementById('mascota-jugador')
-    let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
+    
 
     if(inputHipodoge.checked){
         spanMascotaJugador.innerHTML = 'Hipodoge'
@@ -32,6 +32,30 @@ function seleccionarMascotaJugador(){
         alert('No seleccionaste a ningun Mokepon!!')
     }
     
+    seleccionarMascotaEnemigo()
+}
+
+function seleccionarMascotaEnemigo(){
+    let enemigo = aleatorio(1,6)
+    let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
+    
+    if (enemigo==1){
+        spanMascotaEnemigo.innerHTML = 'Hipodoge'
+    } else if (enemigo==2){
+        spanMascotaEnemigo.innerHTML = 'Capipepo'
+    } else if (enemigo==3){
+        spanMascotaEnemigo.innerHTML = 'Ratigueya'
+    } else if (enemigo==4){
+        spanMascotaEnemigo.innerHTML = 'Langostelvis'
+    } else if (enemigo==5){
+        spanMascotaEnemigo.innerHTML = 'Tucapalma'
+    } else if (enemigo==6){
+        spanMascotaEnemigo.innerHTML = 'Pydos'
+    }
+}
+
+function aleatorio(min,max){
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
 window.addEventListener('load', iniciarJuego)
