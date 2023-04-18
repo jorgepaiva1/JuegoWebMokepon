@@ -2,6 +2,9 @@
 let ataqueJugador = ''
 let ataqueEnemigo = ''
 let resultadoAtaque = ''
+let vidasJugador = 3
+let vidasEnemigo = 3
+
 
 function iniciarJuego(){
     let botonMascotaJugador = document.getElementById('boton-mascota')
@@ -99,16 +102,27 @@ function ataqueAleatorioEnemigo(){
 
 
 function combate(){
+    let spanVidaJugador = document.getElementById('vida-jugador')
+    let spanVidaEnemigo = document.getElementById('vida-enemigo')
+    
     if(ataqueJugador == ataqueEnemigo){
         resultadoAtaque = 'Empate 🤝🏻'
     } else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra'){
         resultadoAtaque = 'Ganaste 🎉 '
+        vidasEnemigo--
+        spanVidaEnemigo.innerHTML = vidasEnemigo
     } else if (ataqueJugador == 'Tierra' && ataqueEnemigo == 'Agua' ){
         resultadoAtaque = 'Ganaste 🎉 '
+        vidasEnemigo--
+        spanVidaEnemigo.innerHTML = vidasEnemigo
     } else if (ataqueJugador == 'Agua' && ataqueEnemigo == 'Fuego'){
         resultadoAtaque = 'Ganaste 🎉 '
+        vidasEnemigo--
+        spanVidaEnemigo.innerHTML = vidasEnemigo
     } else {
         resultadoAtaque = 'Perdiste 😥'
+        vidasJugador--
+        spanVidaJugador.innerHTML = vidasJugador
     }
 
     crearMensaje()
