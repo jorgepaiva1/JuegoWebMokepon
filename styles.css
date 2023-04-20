@@ -10,3 +10,28 @@
     flex-direction: column;
     align-items: center;
 }
+
+.tarjeta-de-mokepon{
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid gold;
+}
+
+input{
+    display: none
+}
+
+#boton-mascota{
+    background-color: darkcyan;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 24px;
+    border: 2px solid blueviolet;
+
+}
