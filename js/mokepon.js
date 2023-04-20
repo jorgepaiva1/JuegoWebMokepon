@@ -126,13 +126,33 @@ function combate(){
     }
 
     crearMensaje()
+
+    revisarVidas()
 }
+
 
 function crearMensaje(){
 
     let seccionMensaje = document.getElementById('mensajes')
     let parrafo = document.createElement('p')
     parrafo.innerHTML = 'Tu mascota atacó con '+ ataqueJugador + ', La mascota del enemigo atacó con ' + ataqueEnemigo + ' - ' + resultadoAtaque 
+
+    seccionMensaje.appendChild(parrafo)
+}
+
+function revisarVidas(){
+    if(vidasEnemigo==0){
+        crearMensajeFinal("Derrotaste al enemigo, Felicidades!!! Ganaste!!!! 😎🎉")
+    } else if (vidasJugador==0){
+        crearMensajeFinal('El enemigo te derroto, Perdistee 😓❌')
+    }
+}
+
+function crearMensajeFinal(resultado){
+
+    let seccionMensaje = document.getElementById('mensajes')
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = resultado
 
     seccionMensaje.appendChild(parrafo)
 }
