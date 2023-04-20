@@ -8,7 +8,10 @@ let vidasEnemigo = 3
 
 function iniciarJuego(){
 
-
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'none' //oculta la seccion 
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'none'
 
     let botonMascotaJugador = document.getElementById('boton-mascota') //a la variable le asigna el elemento con el id correspondiente del html
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador) //espera una llamada (click) y ejecuta la funcion que se le indica cuando pasa lo que se requiere
@@ -39,22 +42,30 @@ function seleccionarMascotaJugador(){
 
     if(inputHipodoge.checked){
         spanMascotaJugador.innerHTML = 'Hipodoge'
+        comenzarAtaque()
     } else if (inputCapipepo.checked){
         spanMascotaJugador.innerHTML = 'Capipepo'
+        comenzarAtaque()
     } else if (inputRatigueya.checked){
         spanMascotaJugador.innerHTML = 'Ratigueya'
+        comenzarAtaque()
     } else if (inputLangostelvis.checked){
         spanMascotaJugador.innerHTML = 'Langostelvis'
+        comenzarAtaque()
     } else if (inputTucapalma.checked){
         spanMascotaJugador.innerHTML = 'Tucapalma'
+        comenzarAtaque()
     } else if (inputPydos.checked){
         spanMascotaJugador.innerHTML = 'Pydos'
+        comenzarAtaque()
     } else {
         alert('No seleccionaste a ningun Mokepon!!')
     }
     
     seleccionarMascotaEnemigo()
 }
+
+
 
 function seleccionarMascotaEnemigo(){
     let enemigo = aleatorio(1,6)
@@ -73,6 +84,13 @@ function seleccionarMascotaEnemigo(){
     } else if (enemigo==6){
         spanMascotaEnemigo.innerHTML = 'Pydos'
     }
+}
+
+function comenzarAtaque(){
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarAtaque.style.display = 'block'
+    let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+    sectionSeleccionarMascota.style.display = 'none'
 }
 
 function ataqueFuego(){
@@ -166,6 +184,10 @@ function crearMensajeFinal(resultado){
     botonTierra.disabled = true
     let botonAgua = document.getElementById('boton-agua')
     botonAgua.disabled = true 
+
+    //aparecer boton reiniciar
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'block'
 }
 
 function reiniciarJuego(){
