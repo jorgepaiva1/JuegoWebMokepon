@@ -1,8 +1,8 @@
-.titulo {
-    color: brown;
-    width: 310px;
-    height: 50px;
-    background-color: teal;
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+body{
+    font-family: 'Righteous', cursive;
+    background-color: #E76161;
 }
 
 #seleccionar-mascota{
@@ -10,16 +10,43 @@
     flex-direction: column;
     align-items: center;
 }
+.titulo {
+    color: brown;
+    font-size: 60px;
+}
+
+.subtitulo{
+    font-size: 28px;
+}
+
+.tarjetas1{
+    display: flex;
+    gap: 10px;
+}
+
+.tarjetas2{
+    display: flex;
+    gap: 10px;
+}
 
 .tarjeta-de-mokepon{
-    background-color: aqua;
-    width: 100px;
+    background-color: #FFC26F;
+    width: 180px;
     height: 100px;
     box-sizing: border-box;
     padding: 10px;
-    margin: 10px;
-    border: 1px solid gold;
+    
+    border: 1px solid #F99B7D;
+    border-radius: 20px;
+    display: flex;
+    color: #957777;
+    align-items: center;
+    justify-content: center;
 }
+.tarjeta-de-mokepon img{
+    width: 88px;
+}
+
 
 input{
     display: none
