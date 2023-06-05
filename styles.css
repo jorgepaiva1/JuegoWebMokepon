@@ -65,3 +65,22 @@ input{
     border: 1px solid #F99B7D;
     border-radius: 12px;
 }
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+#botones-de-ataque{
+    display: flex;
+    flex-direction: column;
+}
+
+.boton-de-ataque{
+    background-color: #FFC26F;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #F99B7D;
+    border-radius: 20px;
+    font-family: 'Righteous', cursive;
+}
