@@ -60,27 +60,34 @@
         <section id="seleccionar-ataque"> 
             <h1 class="titulo">Mokepon!</h1>
 
-            
-            <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vida-jugador">3</span> vidas</p>
-            
-            <h2 class="subtitulo"> Elige a tu ataque:</h2>
+            <h2 class="subtitulo"> Elige tu ataque:</h2>
 
-            <div id="botones-de-ataque">
-                <button id="boton-fuego" class="boton-de-ataque">Fuego 🔥</button>
-                <button id="boton-tierra" class="boton-de-ataque">Tierra 🗻</button>
-                <button id="boton-agua" class="boton-de-ataque">Agua 💧</button>
+            <div id="informacion">
+                <div class="tarjeta-de-informacion">
+                    <p>Tu mascota <span id="mascota-jugador"></span> tiene <span id="vida-jugador">3</span> vidas</p>
+                    <div id="ataques-del-jugador"></div>
+                </div>
+
+                <div id="botones-de-ataque">
+                    <button id="boton-fuego" class="boton-de-ataque">Fuego 🔥</button>
+                    <button id="boton-tierra" class="boton-de-ataque">Tierra 🗻</button>
+                    <button id="boton-agua" class="boton-de-ataque">Agua 💧</button>
+                </div>
+                
+                <div class="tarjeta-de-informacion">
+                    <p>La mascota <span id="mascota-enemigo"></span> del rival tiene <span id="vida-enemigo">3</span> vidas</p>
+                    <div id="ataques-del-enemigo"></div>
+                </div>
+
             </div>
-            <p>La mascota <span id="mascota-enemigo"></span> del rival tiene <span id="vida-enemigo">3</span> vidas</p>
-            
-            
-            <section id="mensajes">
-                
-            </section>
 
-            <section id="reiniciar">
-                
-                <button id="boton-reiniciar">Reiniciar</button>
-            </section>
+            <div id="mensajes">
+                <p id="resultado"> Buena Suerte</p>
+
+                <section id="reiniciar">
+                    <button id="boton-reiniciar">Volver a Jugar</button>
+                </section>
+            </div> 
 
         </section>
 

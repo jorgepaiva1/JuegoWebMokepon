@@ -155,11 +155,19 @@ function combate(){
 
 function crearMensaje(){
 
-    let seccionMensaje = document.getElementById('mensajes')
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = 'Tu mascota atacó con '+ ataqueJugador + ', La mascota del enemigo atacó con ' + ataqueEnemigo + ' - ' + resultadoAtaque 
+    let seccionMensajes = document.getElementById('resultado')
+    let ataquesDelJugador = document.getElementById('ataques-del-jugador')
+    let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
 
-    seccionMensaje.appendChild(parrafo)
+    let nuevoAtaqueJugador = document.createElement('p')
+    let nuevoAtaqueEnemigo = document.createElement('p')
+
+    seccionMensajes.innerHTML = resultadoAtaque
+    nuevoAtaqueJugador.innerHTML = ataqueJugador
+    nuevoAtaqueEnemigo.innerHTML = ataqueEnemigo
+
+    ataquesDelJugador.appendChild(nuevoAtaqueJugador)
+    ataquesDelEnemigo.appendChild(nuevoAtaqueEnemigo)
 }
 
 function revisarVidas(){
@@ -172,11 +180,8 @@ function revisarVidas(){
 
 function crearMensajeFinal(resultado){
 
-    let seccionMensaje = document.getElementById('mensajes')
-    let parrafo = document.createElement('p')
-    parrafo.innerHTML = resultado
-
-    seccionMensaje.appendChild(parrafo)
+    let seccionMensaje = document.getElementById('resultado')
+    seccionMensaje.innerHTML = resultado
 
     let botonFuego = document.getElementById('boton-fuego')
     botonFuego.disabled = true 
@@ -199,4 +204,3 @@ function aleatorio(min,max){
 }
 
 window.addEventListener('load', iniciarJuego)
-
