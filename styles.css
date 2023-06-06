@@ -69,7 +69,9 @@ input{
 #informacion{
     display: grid;
     grid-template-columns: 140px 140px 140px;
-    justify-self: center;    
+    grid-template-rows: 250px;
+    text-align: center;
+    justify-items: center;
 }
 
 #seleccionar-ataque{
@@ -77,7 +79,7 @@ input{
     align-items: center;
 }
 
-#botones-de-ataque{
+.botones-de-ataque{
     display: flex;
     flex-direction: column;
     width: 100px;
@@ -124,4 +126,32 @@ input{
     color:chartreuse;
     background-color: transparent;
     font-family: 'Righteous', cursive;
+}
+
+@media(max-width: 380px){
+    .tarjetas1{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .tarjetas2{
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 8px;
+    }
+}
+
+@media(max-width: 425px){
+    #informacion{
+        display: grid;
+        grid-template-columns: 140px;
+        grid-template-rows: 140px;;
+    }
+    .tarjeta-de-informacion {
+        grid-column: 1;
+        height: 250px;
+    }
+    .botones-de-ataque {
+        grid-row: 1;
+        width: 140px;
+    }
 }
