@@ -67,8 +67,9 @@ input{
 }
 
 #informacion{
-    display: flex;
-    gap: 30px;
+    display: grid;
+    grid-template-columns: 140px 140px 140px;
+    justify-self: center;    
 }
 
 #seleccionar-ataque{
@@ -79,7 +80,9 @@ input{
 #botones-de-ataque{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    width: 100px;
+    justify-content: flex-start;
+    align-items: stretch;
 }
 
 .boton-de-ataque{
@@ -106,7 +109,6 @@ input{
 .tarjeta-de-informacion{
     background-color: #FFC26F;
     width: 140px;
-    height: 172px;
     box-sizing: border-box;
     padding: 10px;
     flex-direction: column;
@@ -114,6 +116,7 @@ input{
     border-radius: 20px;
     display: flex;
     color: #957777;
+    align-items: center;
 }
 
 #boton-reiniciar{
