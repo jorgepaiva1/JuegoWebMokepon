@@ -51,7 +51,13 @@ body{
 
 
 input{
-    display: none
+    display: none 
+}
+input:checked + label{
+   /* background-color: springgreen; */
+   border-color: white;
+   background-color: rgb(159, 230, 89);
+   border-radius: 32px;
 }
 
 #boton-mascota{
