@@ -1,4 +1,4 @@
-# JuegoWebMokepon
+# JuegoWebMokepon ····42%
 
 puede consultar los branch para ver los cambios progresivos
 
