@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Righteous&display=swap');
+
+body{
+    font-family: 'Righteous', cursive;
+    background-color: #E76161;
+}
+
+#seleccionar-mascota{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.titulo {
+    color: brown;
+    font-family: 'Patua One', cursive;
+    font-size: 60px;
+}
+
+.subtitulo{
+    font-size: 28px;
+}
+
+.tarjetas1{
+    display: flex;
+    gap: 10px;
+}
+
+.tarjetas2{
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.tarjeta-de-mokepon{
+    background-color: #FFC26F;
+    width: 100px;
+    box-sizing: border-box;
+    padding: 10px;
+    
+    border: 1px solid #F99B7D;
+    border-radius: 20px;
+    display: flex;
+    color: #957777;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.tarjeta-de-mokepon img{
+    width: 88px;
+}
+
+
+input{
+    display: none 
+}
+input:checked + label{
+   /* background-color: springgreen; */
+   border-color: white;
+   background-color: rgb(159, 230, 89);
+   border-radius: 32px;
+}
+
+#boton-mascota{
+    width: 320px;
+    height: 44px;
+    font-family: 'Righteous', cursive;
+    background-color: #F6C391;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-top: 16px;
+    border: 1px solid #F99B7D;
+    border-radius: 12px;
+}
+
+#informacion{
+    display: grid;
+    grid-template-columns: 140px 140px 140px;
+    grid-template-rows: 250px;
+    text-align: center;
+    justify-items: center;
+}
+
+#seleccionar-ataque{
+    flex-direction: column;
+    align-items: center;
+}
+
+.botones-de-ataque{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.boton-de-ataque{
+    background-color: #FFC26F;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #F99B7D;
+    border-radius: 20px;
+    font-family: 'Righteous', cursive;
+}
+
+#mensajes{
+    width: 200px;
+    background: #957777;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Righteous', cursive;
+}
+
+.tarjeta-de-informacion{
+    background-color: #FFC26F;
+    width: 140px;
+    box-sizing: border-box;
+    padding: 10px;
+    flex-direction: column;
+    border: 1px solid #F99B7D;
+    border-radius: 20px;
+    display: flex;
+    color: #957777;
+    align-items: center;
+}
+
+#boton-reiniciar{
+    border: none;
+    color:chartreuse;
+    background-color: transparent;
+    font-family: 'Righteous', cursive;
+}
+
+@media(max-width: 380px){
+    .tarjetas1{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .tarjetas2{
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 8px;
+    }
+}
+
+@media(max-width: 425px){
+    #informacion{
+        display: grid;
+        grid-template-columns: 140px;
+        grid-template-rows: 140px;;
+    }
+    .tarjeta-de-informacion {
+        grid-column: 1;
+        height: 250px;
+    }
+    .botones-de-ataque {
+        grid-row: 1;
+        width: 140px;
+    }
+}
