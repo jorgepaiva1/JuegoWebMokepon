@@ -1,5 +1,7 @@
 # JuegoWebMokepon ····42%
 
-puede consultar los branch para ver los cambios progresivos
-
 todavia no lanzado pero puede visualizarlo en la carpeta "Como se ve"
+
+consultar los branch para ver los cambios progresivos
+
+para probarlo solo clonar y abrir mokepon.html
