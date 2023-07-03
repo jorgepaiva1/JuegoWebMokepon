@@ -1,6 +1,8 @@
 
-let ataqueJugador = ''
-let ataqueEnemigo = ''
+let ataqueJugador = '...'
+let ataqueJugadorAnterior = ''
+let ataqueEnemigo = '...'
+let ataqueEnemigoAnterior = ''
 let resultadoAtaque = ''
 let vidasJugador = 3
 let vidasEnemigo = 3
@@ -94,22 +96,26 @@ function comenzarAtaque(){
 }
 
 function ataqueFuego(){
+    ataqueJugadorAnterior= ataqueJugador
     ataqueJugador = 'Fuego'
     ataqueAleatorioEnemigo()
 }
 
 function ataqueTierra(){
+    ataqueJugadorAnterior= ataqueJugador
     ataqueJugador = 'Tierra'
     ataqueAleatorioEnemigo()
 }
 
 function ataqueAgua(){
+    ataqueJugadorAnterior= ataqueJugador
     ataqueJugador = 'Agua'
     ataqueAleatorioEnemigo()
 }
 
 function ataqueAleatorioEnemigo(){
     let numeroAtaqueEnemigo = aleatorio(1,3)
+    ataqueEnemigoAnterior= ataqueEnemigo
 
     if(numeroAtaqueEnemigo == 1){
         ataqueEnemigo = 'Fuego' 
@@ -156,18 +162,60 @@ function combate(){
 function crearMensaje(){
 
     let seccionMensajes = document.getElementById('resultado')
-    let ataquesDelJugador = document.getElementById('ataques-del-jugador')
-    let ataquesDelEnemigo = document.getElementById('ataques-del-enemigo')
-
+    let ataquesDelJugador = document.getElementById('ataque-actual-jugador')
+    let ataquesDelJugadorAnterior = document.getElementById('ataque-anterior-jugador')
+    let ataquesDelEnemigo = document.getElementById('ataque-actual-enemigo')
+    let ataquesDelEnemigoAnterior = document.getElementById('ataque-anterior-enemigo')
+/*
     let nuevoAtaqueJugador = document.createElement('p')
     let nuevoAtaqueEnemigo = document.createElement('p')
-
+*/
     seccionMensajes.innerHTML = resultadoAtaque
+    ataquesDelJugador.innerHTML = ataqueJugador
+    ataquesDelJugadorAnterior.innerHTML = ataqueJugadorAnterior
+    ataquesDelEnemigo.innerHTML = ataqueEnemigo
+    ataquesDelEnemigoAnterior.innerHTML = ataqueEnemigoAnterior
+
+    //cambiar color segun ataque del jugador
+    if(ataqueJugador=="Fuego"){
+        ataquesDelJugador.style.color ="red"
+    }else if (ataqueJugador == "Agua"){
+        ataquesDelJugador.style.color = "skyblue"
+    }else if (ataqueJugador == "Tierra"){
+        ataquesDelJugador.style.color = "#B8621B"
+    }
+
+    if(ataqueJugadorAnterior=="Fuego"){
+        ataquesDelJugadorAnterior.style.color ="red"
+    }else if (ataqueJugadorAnterior == "Agua"){
+        ataquesDelJugadorAnterior.style.color = "skyblue"
+    }else if (ataqueJugadorAnterior == "Tierra"){
+        ataquesDelJugadorAnterior.style.color = "#B8621B"
+    }
+
+    //cambiar color segun ataque del enemigo
+    if(ataqueEnemigo=="Fuego"){
+        ataquesDelEnemigo.style.color ="red"
+    }else if (ataqueEnemigo == "Agua"){
+        ataquesDelEnemigo.style.color = "skyblue"
+    }else if (ataqueEnemigo == "Tierra"){
+        ataquesDelEnemigo.style.color = "#B8621B"
+    }
+    
+    if(ataqueEnemigoAnterior=="Fuego"){
+        ataquesDelEnemigoAnterior.style.color ="red"
+    }else if (ataqueEnemigoAnterior == "Agua"){
+        ataquesDelEnemigoAnterior.style.color = "skyblue"
+    }else if (ataqueEnemigoAnterior == "Tierra"){
+        ataquesDelEnemigoAnterior.style.color = "#B8621B"
+    }
+/*
     nuevoAtaqueJugador.innerHTML = ataqueJugador
     nuevoAtaqueEnemigo.innerHTML = ataqueEnemigo
 
     ataquesDelJugador.appendChild(nuevoAtaqueJugador)
     ataquesDelEnemigo.appendChild(nuevoAtaqueEnemigo)
+*/
 }
 
 function revisarVidas(){
