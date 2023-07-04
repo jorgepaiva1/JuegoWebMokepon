@@ -3,7 +3,6 @@
     <head>
         <meta charset="uft-8">
         <title>Mokepon!</title>
-        <script src="./js/mokepon.js"> </script>
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
@@ -69,7 +68,12 @@
                 <div class="tarjeta-de-informacion">
                     <p id="vida-jugador">3</p>
                     <p id="mascota-jugador"></p>
-                    <div id="ataques-del-jugador"></div>
+                    <div id="ataques-del-jugador">
+                        <p>Ataque actual</p>
+                        <p id="ataque-actual-jugador">...</p>
+                        <p>Ataque anterior</p>
+                        <p id="ataque-anterior-jugador">...</p>
+                    </div>
                 </div>
 
                 <div class="botones-de-ataque">
@@ -81,7 +85,12 @@
                 <div class="tarjeta-de-informacion">
                     <p id="vida-enemigo">3</p>
                     <p id="mascota-enemigo"></p>
-                    <div id="ataques-del-enemigo"></div>
+                    <div id="ataques-del-enemigo">
+                        <p>Ataque actual</p>
+                        <p id="ataque-actual-enemigo">...</p>
+                        <p>Ataque anterior</p>
+                        <p id="ataque-anterior-enemigo">...</p>
+                    </div>
                 </div>
 
             </div>
@@ -95,6 +104,7 @@
             </div> 
 
         </section>
-
+        
+        <script src="./js/mokepon.js"> </script>
     </body>
 </html>
