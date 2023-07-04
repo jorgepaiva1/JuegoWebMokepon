@@ -155,7 +155,7 @@ input:checked + label{
     }
     .tarjeta-de-informacion {
         grid-column: 1;
-        height: 250px;
+        height: 268px;
     }
     .botones-de-ataque {
         grid-row: 1;

@@ -1,3 +1,38 @@
+const sectionReiniciar = document.getElementById('reiniciar')
+const sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
+const botonMascotaJugador = document.getElementById('boton-mascota') //a la variable le asigna el elemento con el id correspondiente del html
+const botonFuego = document.getElementById('boton-fuego')
+const botonTierra = document.getElementById('boton-tierra')
+const botonAgua = document.getElementById('boton-agua')
+const botonReiniciar = document.getElementById('boton-reiniciar')
+
+
+const inputHipodoge = document.getElementById('hipodoge')
+const inputCapipepo = document.getElementById('capipepo')
+const inputRatigueya = document.getElementById('ratigueya')
+const inputLangostelvis = document.getElementById('langostelvis')
+const inputTucapalma = document.getElementById('tucapalma')
+const inputPydos = document.getElementById('pydos')
+const spanMascotaJugador = document.getElementById('mascota-jugador')
+
+
+const spanMascotaEnemigo = document.getElementById('mascota-enemigo')
+
+const sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+
+
+const spanVidaJugador = document.getElementById('vida-jugador')
+const spanVidaEnemigo = document.getElementById('vida-enemigo')
+
+
+const seccionMensajes = document.getElementById('resultado')
+const ataquesDelJugador = document.getElementById('ataque-actual-jugador')
+const ataquesDelJugadorAnterior = document.getElementById('ataque-anterior-jugador')
+const ataquesDelEnemigo = document.getElementById('ataque-actual-enemigo')
+const ataquesDelEnemigoAnterior = document.getElementById('ataque-anterior-enemigo')
+
+const seccionMensaje = document.getElementById('resultado')
+
 
 let ataqueJugador = '...'
 let ataqueJugadorAnterior = ''
@@ -10,38 +45,20 @@ let vidasEnemigo = 3
 
 function iniciarJuego(){
 
-    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
     sectionSeleccionarAtaque.style.display = 'none' //oculta la seccion 
-    let sectionReiniciar = document.getElementById('reiniciar')
     sectionReiniciar.style.display = 'none'
-
-    let botonMascotaJugador = document.getElementById('boton-mascota') //a la variable le asigna el elemento con el id correspondiente del html
+    
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador) //espera una llamada (click) y ejecuta la funcion que se le indica cuando pasa lo que se requiere
 
-    let botonFuego = document.getElementById('boton-fuego')
-    botonFuego.addEventListener('click', ataqueFuego)
-    let botonTierra = document.getElementById('boton-tierra')
+    botonFuego.addEventListener('click', ataqueFuego) 
     botonTierra.addEventListener('click', ataqueTierra)
-    let botonAgua = document.getElementById('boton-agua')
     botonAgua.addEventListener('click', ataqueAgua)
     
-    let botonReiniciar = document.getElementById('boton-reiniciar')
     botonReiniciar.addEventListener('click', reiniciarJuego) 
-
 }
 
 function seleccionarMascotaJugador(){
-
-    let inputHipodoge = document.getElementById('hipodoge')
-    let inputCapipepo = document.getElementById('capipepo')
-    let inputRatigueya = document.getElementById('ratigueya')
-    let inputLangostelvis = document.getElementById('langostelvis')
-    let inputTucapalma = document.getElementById('tucapalma')
-    let inputPydos = document.getElementById('pydos')
-
-    let spanMascotaJugador = document.getElementById('mascota-jugador')
-    
-
+  
     if(inputHipodoge.checked){
         spanMascotaJugador.innerHTML = 'Hipodoge'
         comenzarAtaque()
@@ -71,8 +88,7 @@ function seleccionarMascotaJugador(){
 
 function seleccionarMascotaEnemigo(){
     let enemigo = aleatorio(1,6)
-    let spanMascotaEnemigo = document.getElementById('mascota-enemigo')
-    
+        
     if (enemigo==1){
         spanMascotaEnemigo.innerHTML = 'Hipodoge'
     } else if (enemigo==2){
@@ -89,9 +105,8 @@ function seleccionarMascotaEnemigo(){
 }
 
 function comenzarAtaque(){
-    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque')
     sectionSeleccionarAtaque.style.display = 'flex'
-    let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+    
     sectionSeleccionarMascota.style.display = 'none'
 }
 
@@ -130,9 +145,7 @@ function ataqueAleatorioEnemigo(){
 
 
 function combate(){
-    let spanVidaJugador = document.getElementById('vida-jugador')
-    let spanVidaEnemigo = document.getElementById('vida-enemigo')
-    
+  
     if(ataqueJugador == ataqueEnemigo){
         resultadoAtaque = 'Empate 🤝🏻'
     } else if (ataqueJugador == 'Fuego' && ataqueEnemigo == 'Tierra'){
@@ -161,15 +174,6 @@ function combate(){
 
 function crearMensaje(){
 
-    let seccionMensajes = document.getElementById('resultado')
-    let ataquesDelJugador = document.getElementById('ataque-actual-jugador')
-    let ataquesDelJugadorAnterior = document.getElementById('ataque-anterior-jugador')
-    let ataquesDelEnemigo = document.getElementById('ataque-actual-enemigo')
-    let ataquesDelEnemigoAnterior = document.getElementById('ataque-anterior-enemigo')
-/*
-    let nuevoAtaqueJugador = document.createElement('p')
-    let nuevoAtaqueEnemigo = document.createElement('p')
-*/
     seccionMensajes.innerHTML = resultadoAtaque
     ataquesDelJugador.innerHTML = ataqueJugador
     ataquesDelJugadorAnterior.innerHTML = ataqueJugadorAnterior
@@ -209,13 +213,6 @@ function crearMensaje(){
     }else if (ataqueEnemigoAnterior == "Tierra"){
         ataquesDelEnemigoAnterior.style.color = "#B8621B"
     }
-/*
-    nuevoAtaqueJugador.innerHTML = ataqueJugador
-    nuevoAtaqueEnemigo.innerHTML = ataqueEnemigo
-
-    ataquesDelJugador.appendChild(nuevoAtaqueJugador)
-    ataquesDelEnemigo.appendChild(nuevoAtaqueEnemigo)
-*/
 }
 
 function revisarVidas(){
@@ -228,18 +225,13 @@ function revisarVidas(){
 
 function crearMensajeFinal(resultado){
 
-    let seccionMensaje = document.getElementById('resultado')
     seccionMensaje.innerHTML = resultado
 
-    let botonFuego = document.getElementById('boton-fuego')
     botonFuego.disabled = true 
-    let botonTierra = document.getElementById('boton-tierra')
     botonTierra.disabled = true
-    let botonAgua = document.getElementById('boton-agua')
     botonAgua.disabled = true 
 
     //aparecer boton reiniciar
-    let sectionReiniciar = document.getElementById('reiniciar')
     sectionReiniciar.style.display = 'block'
 }
 
