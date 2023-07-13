@@ -42,7 +42,72 @@ let resultadoAtaque = ''
 let vidasJugador = 3
 let vidasEnemigo = 3
 
+let mokepones = []
+class Mokepon {
+    constructor(nombre, foto, vida) {
+        this.nombre = nombre
+        this.foto = foto
+        this.vida = vida
+        this.ataques = []
+    }
+}
 
+let hipodoge = new Mokepon ( 'Hipodoge' , './assets/hipodoge.png', 3)
+let capipepo = new Mokepon ( 'Capipepo' , './assets/capipepo.png', 3)
+let ratigueya = new Mokepon ( 'Ratigueya' , './assets/ratigueya.png', 3)
+let langostelvis = new Mokepon ( 'Langostelvis' , './assets/langostelvis.png', 3)
+let tucapalma = new Mokepon ( 'Tucapalma' , './assets/tucapalma.png', 3)
+let pydos = new Mokepon ( 'Pydos' , './assets/paidos.png', 3)
+
+mokepones.push(hipodoge, capipepo, ratigueya, langostelvis, tucapalma, pydos)
+
+hipodoge.ataques.push(
+    {   nombre: '💧', id: 'boton-agua'   },
+    {   nombre: '💧', id: 'boton-agua'   },
+    {   nombre: '💧', id: 'boton-agua'   },
+    {   nombre: '🔥', id: 'boton-fuego'  },
+    {   nombre: '🗻', id: 'boton-tierra' }
+)
+
+capipepo.ataques.push(
+    {   nombre: '🗻', id: 'boton-tierra' },
+    {   nombre: '🗻', id: 'boton-tierra' },
+    {   nombre: '🗻', id: 'boton-tierra' },
+    {   nombre: '🔥', id: 'boton-fuego'  },
+    {   nombre: '💧', id: 'boton-agua' }
+)
+
+ratigueya.ataques.push(
+    {   nombre: '🔥', id: 'boton-fuego'  },
+    {   nombre: '🔥', id: 'boton-fuego'  },
+    {   nombre: '🔥', id: 'boton-fuego'  },
+    {   nombre: '💧', id: 'boton-agua'   },
+    {   nombre: '🗻', id: 'boton-tierra' }
+)
+
+langostelvis.ataques.push(
+    {   nombre: '🔥', id: 'boton-fuego'  },
+    {   nombre: '🔥', id: 'boton-fuego'  },
+    {   nombre: '🔥', id: 'boton-fuego'  },
+    {   nombre: '💧', id: 'boton-agua'   },
+    {   nombre: '🗻', id: 'boton-tierra' }
+)
+
+tucapalma.ataques.push(
+    {   nombre: '💧', id: 'boton-agua'   },
+    {   nombre: '💧', id: 'boton-agua'   },
+    {   nombre: '💧', id: 'boton-agua'   },
+    {   nombre: '🔥', id: 'boton-fuego'  },
+    {   nombre: '🗻', id: 'boton-tierra' }
+)
+
+pydos.ataques.push(
+    {   nombre: '💧', id: 'boton-agua'   },
+    {   nombre: '💧', id: 'boton-agua'   },
+    {   nombre: '🗻', id: 'boton-tierra' },
+    {   nombre: '🗻', id: 'boton-tierra' },
+    {   nombre: '🔥', id: 'boton-fuego'  }
+)
 function iniciarJuego(){
 
     sectionSeleccionarAtaque.style.display = 'none' //oculta la seccion 
