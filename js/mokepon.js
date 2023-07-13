@@ -33,6 +33,7 @@ const ataquesDelEnemigoAnterior = document.getElementById('ataque-anterior-enemi
 
 const seccionMensaje = document.getElementById('resultado')
 
+const contenedorTarjetas = document.getElementById('contenedorTarjetas')
 
 let ataqueJugador = '...'
 let ataqueJugadorAnterior = ''
@@ -41,6 +42,8 @@ let ataqueEnemigoAnterior = ''
 let resultadoAtaque = ''
 let vidasJugador = 3
 let vidasEnemigo = 3
+let opcionMokepones
+
 
 let mokepones = []
 class Mokepon {
@@ -108,11 +111,26 @@ pydos.ataques.push(
     {   nombre: '🗻', id: 'boton-tierra' },
     {   nombre: '🔥', id: 'boton-fuego'  }
 )
+
+mokepones.push
+
 function iniciarJuego(){
 
     sectionSeleccionarAtaque.style.display = 'none' //oculta la seccion 
     sectionReiniciar.style.display = 'none'
     
+    mokepones.forEach((mokepon) => {
+        opcionMokepones = `
+        <input type="radio" name="mascota" id=${mokepon.nombre}/>
+                <label class="tarjeta-de-mokepon" for=${mokepon.nombre}>
+                    <p>${mokepon.nombre}</p>
+                    <img src=${mokepon.foto} alt=${mokepon.nombre}>
+                </label>
+        `
+
+    contenedorTarjetas.innerHTML += opcionMokepones  
+    }) 
+
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador) //espera una llamada (click) y ejecuta la funcion que se le indica cuando pasa lo que se requiere
 
     botonFuego.addEventListener('click', ataqueFuego) 
