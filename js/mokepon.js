@@ -7,12 +7,6 @@ const botonAgua = document.getElementById('boton-agua')
 const botonReiniciar = document.getElementById('boton-reiniciar')
 
 
-const inputHipodoge = document.getElementById('hipodoge')
-const inputCapipepo = document.getElementById('capipepo')
-const inputRatigueya = document.getElementById('ratigueya')
-const inputLangostelvis = document.getElementById('langostelvis')
-const inputTucapalma = document.getElementById('tucapalma')
-const inputPydos = document.getElementById('pydos')
 const spanMascotaJugador = document.getElementById('mascota-jugador')
 
 
@@ -40,6 +34,12 @@ let ataqueJugadorAnterior = ''
 let ataqueEnemigo = '...'
 let ataqueEnemigoAnterior = ''
 let resultadoAtaque = ''
+let inputHipodoge
+let inputCapipepo
+let inputRatigueya 
+let inputLangostelvis 
+let inputTucapalma 
+let inputPydos
 let vidasJugador = 3
 let vidasEnemigo = 3
 let opcionMokepones
@@ -112,16 +112,16 @@ pydos.ataques.push(
     {   nombre: '🔥', id: 'boton-fuego'  }
 )
 
-mokepones.push
 
 function iniciarJuego(){
 
     sectionSeleccionarAtaque.style.display = 'none' //oculta la seccion 
     sectionReiniciar.style.display = 'none'
     
+
     mokepones.forEach((mokepon) => {
         opcionMokepones = `
-        <input type="radio" name="mascota" id=${mokepon.nombre}/>
+        <input type="radio" name="mascota" id=${mokepon.nombre} />
                 <label class="tarjeta-de-mokepon" for=${mokepon.nombre}>
                     <p>${mokepon.nombre}</p>
                     <img src=${mokepon.foto} alt=${mokepon.nombre}>
@@ -129,7 +129,15 @@ function iniciarJuego(){
         `
 
     contenedorTarjetas.innerHTML += opcionMokepones  
+
+    inputHipodoge = document.getElementById('Hipodoge')
+    inputCapipepo = document.getElementById('Capipepo')
+    inputRatigueya = document.getElementById('Ratigueya')
+    inputLangostelvis = document.getElementById('Langostelvis')
+    inputTucapalma = document.getElementById('Tucapalma')
+    inputPydos = document.getElementById('Pydos')
     }) 
+
 
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador) //espera una llamada (click) y ejecuta la funcion que se le indica cuando pasa lo que se requiere
 
