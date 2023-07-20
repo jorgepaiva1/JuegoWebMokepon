@@ -1,4 +1,4 @@
-# JuegoWebMokepon ····42%
+# JuegoWebMokepon ····62%
 
 todavia no lanzado pero puede visualizarlo en la carpeta "Como se ve"
 
